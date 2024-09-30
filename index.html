@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: "Merriweather", serif;
+        }
+        .top-bar {
+            background-color: #4b0082;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        .top-bar a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            font-size: 15px;
+            margin-top: 5px;
+        }
+        .header img {
+            height: 50px;
+        }
+        .header .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        .header .search-bar input {
+            padding: 5px;
+            margin-right: 10px;
+        }
+        .nav-bar {
+            background-color: #00a2e8;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .main-content .left-section {
+            width: 70%;
+        }
+        .main-content .left-section img {
+            width: 100%;
+        }
+        .main-content .right-section {
+            width: 25%;
+            background-color: #ffe600;
+            padding: 20px;
+            height: 35%;
+            text-align: center;
+            
+        }
+        .main-content .right-section h2 {
+            color: #4b0082;
+        }
+        .main-content .right-section p {
+            font-size: 24px;
+            color: #4b0082;
+        }
+        .main-content .right-section .buttons {
+            margin-top: 20px;
+        }
+        .main-content .right-section .buttons a {
+            display: block;
+            background-color: #4b0082;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 50%;
+            font-family: "Merriweather", serif;
+        }
+        .section-header {
+            background-color: #ffd700;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .section-content {
+            padding: 50px;
+            font-family: "Merriweather", serif;
+        }
+        .section-content img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .section-content a {
+            display: block;
+            text-align: right;
+            color: #0000ff;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .announcements ul {
+            list-style: none;
+            padding: 0;
+        }
+        .announcements li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .announcements li i {
+            color: #ffd700;
+            margin-right: 10px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-top: 1px solid #ddd;
+        }
+        .footer a {
+            color: #ffffff;
+            margin: 0 10px;
+            text-decoration: none;
+            
+           
+        }
+        .other-services {
+            background-color: #ffd700;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 30px 0;
+            width: 280px;
+            margin-left: 700px;
+        }
+        .top-section {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffffff;
+            padding: 20px 0;
+        }
+        .top-section div {
+            text-align: center;
+            width: 15%;
+        }
+        .top-section div img {
+            width: 100px;
+            height: auto;
+        }
+        .top-section div p {
+            margin: 10px 0 0;
+            color: #4b0082;
+            font-weight: bold;
+        }
+        .footer {
+            background-color:  #4b0082;
+            color: white;
+            padding: 20px 0;
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1500px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+        .footer .container div {
+            flex: 1;
+            margin: 10px;
+        }
+        .footer h3 {
+            color: #ffcc00;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer ul li {
+            margin-bottom: 8px;
+        }
+        .footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer .important {
+            background-color: #000000;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .footer .important a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+        .footer .important a:hover {
+            text-decoration: underline;
+        }
+        .footer .copyright {
+            background-color: #d0e7f9;
+            color: #2e006b;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+        .footer .social-icons {
+            text-align:center;
+            margin-top: 10px;
+            margin-left: 650px;
+        }
+        .footer .social-icons a {
+            color: #fdfbff;
+            margin: 0 10px;
+            font-size: 20px;
+           
+            
+        }
+        .footer .social-icons a:hover {
+            color: #ffcc00;
+           
+        }
+        .sticky-icons {
+         position: fixed;
+          bottom: 20px;
+         right: 20px; 
+        display: flex;
+        flex-direction: column; 
+        gap: 10px; 
+        }
+
+    .sticky-icons .icon {
+        background-color: #2e006b; 
+         color: white;
+        font-size: 34px;
+        padding: 10px;
+         border-radius: 50%;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        text-decoration: none; 
+    }
+
+    .sticky-icons .icon:hover {
+      background-color:#00bfff; 
+        transform: scale(1.1); 
+    }
+
+    .sticky-icons .icon:active {
+    transform: scale(1); 
+    }
+
+  </style>
+ </head>
+ <body>
+  <div class="top-bar">
+   <a href="#">About Us</a>|
+   <a href="#">Subsidiaries</a>|
+   <a href="#">Corporate Governance</a>|
+   <a href="#">Investor Relations</a>|
+   <a href="#">SBI In the News</a>|
+   <a href="#">हिंदी</a>|
+   <a href="#">Customer Care</a>|
+   <a href="#">Careers</a>|
+   <a href="#">Net Banking</a>
+   <a href="./register.html"><button style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; margin: 10px; font-size: 16px; cursor: pointer; border-radius: 5px;">REGISTER</button></a>
+
+   <a href="./login1.html"><button style="background-color: #008CBA; color: white; border: none; padding: 10px 20px; margin: 10px; font-size: 16px; cursor: pointer; border-radius: 5px;">LOGIN</button></a>
+   
+  </div>
+  <div class="header">
+    
+   <img alt="SBI Logo" height="50" src="https://1000logos.net/wp-content/uploads/2018/03/SBI-Logo.jpg" width="100"/>
+   <div class="search-bar">
+   <div>
+    <a href="#" style="margin-right: 5px;margin-left: 20px;">
+        PERSONAL</a>|
+    <a href="./login1.html" style="margin-left: 20px; margin-right: 10px;"> NRI</a> |
+    <a href="#" style="margin-left: 20px; margin-right: 10px;">BUSINESS</a> |
+    <a href="#" style="margin-left: 20px;margin-right: 20px;">
+         BANKING</a>
+</div>
+
+    <img style="width: 200px ; margin-right: 20px; height: 70px;" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ3rkIzsoG8RkVLuQ2gnxWuAYI4aTPosUMz7RCBkU0SMtfTlcEj" alt="">
+    <img style="width: 250px ; margin-right: 20px; height: 70px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/SBI_card_logo.png/640px-SBI_card_logo.png" alt="">
+    <img style="width: 150px ; margin-right: 20px; height: 70px;" src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202106/yono_1200_240621091334.jpg" alt="">
+   
+    <input placeholder="Search" type="text"/>
+    <i class="fas fa-search">
+    </i>
+   </div>
+  </div>
+  <div class="nav-bar">
+   <a href="#">
+    <i class="fa-solid fa-file-invoice"></i>  ACCOUNTS
+   </a>|
+   <a href="./login1.html"><i class="fa-solid fa-piggy-bank"></i> DEPOSITS
+   </a> |
+   <a href="#"><i class="fa-solid fa-sack-dollar"></i>  LOANS</a> |
+   <a href="#"><i class="fa-regular fa-credit-card"></i> CARDS</a> |
+   <a href="#"><i class="fa-solid fa-computer"></i> DIGITAL</a> |
+   <a href="#"><i class="fa-solid fa-gift"></i> SBI REWARS</a> |
+   <a href="#"><i class="fa-solid fa-headset"></i> INFROMATION & SERVICES
+   </a> 
+   
+  </div>
+  <div class="main-content">
+   <div class="left-section">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+        <div class="carousel-inner" >
+          <div class="carousel-item active">
+            <img src="https://pbs.twimg.com/media/DpH45QwXcAEFiLi.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://sbi.co.in/documents/16012/78809/ATM-adapts.jpg/55440f97-2454-6067-898a-38b6f88c2de5?t=1714742086195" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://sbi.co.in/documents/16012/44015527/090924-Dad-final-web-banner.jpg/ecde8930-2cfe-d247-cb5b-557ae6397912?t=1725883679191" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+   </div>
+   
+   <div class="right-section">
+     <!-- Card and Button at the Top -->
+  <div class="card" style="padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+    <h3><b>SBI Quick Calculator</b></h3>
+    <p>"Easily calculate your savings and loans with our user-friendly calculator!"</p>
+    <a href="./calculator.html" class="btn btn-primary" style="margin-top: 10px;"> <i class="fa-solid fa-calculator"></i> SBI  CALCULATOR</a>
+  </div>
+    <h2>
+     Interest Rates
+    </h2>
+    <p>
+     Loan Against MF  10.05% p.a.
+    </p>
+    
+    <div class="buttons">
+     <a href="#">SEE PRODUCTS</a>
+     <a href="#">APPLY NOW</a>
+    </div>
+    <div class="quick-links">
+     <h3>Quick Links</h3> 
+     <a href="#">
+     Banking Services</a>|
+     <a href="#">Interest Rates</a>
+     
+    </div>
+   </div>
+  </div>
+
+
+
+  <div class="sticky-icons">
+    <a href="tel:+123456789" class="icon call" title="Call">
+        <i class="fa-solid fa-phone-volume"></i>
+    </a>
+    <a href="https://maps.google.com" target="_blank" class="icon location" title="Location">
+        <i class="fa-solid fa-location-dot"></i>
+    </a>
+    <a href="mailto:support@example.com" class="icon support" title="Customer Support">
+        <i class="fa-solid fa-headset"></i>
+    </a>
+</div>
+
+
+
+  <!-- section2 -->
+
+
+  <div class="container">
+    <div class="section">
+     <div class="section-header">
+      TRENDING OFFERS @ SBI
+     </div>
+     <div class="section-content">
+      <img alt="SBI Offer Image" height="200" src="https://english.cdn.zeenews.com/sites/default/files/2022/11/08/1114304-sbi-debit-card1.jpg" width="300"/>
+      <a href="#">
+       View All Offers
+      </a>
+     </div>
+    </div>
+    <div class="section">
+     <div class="section-header">
+      STRATEGIC TRAINING UNIT
+     </div>
+     <div class="section-content">
+      <img alt="SBI Training Image" height="200" src="https://sbi.co.in/documents/16012/44015527/SBI-CKYC-Awareness_Web-Banner-English.jpg/defd3b36-5aa3-1d32-4490-108364fbb0a8?t=1726492680637" width="300"/>
+      <a href="#">
+       Show All
+      </a>
+     </div>
+    </div>
+    <div class="section announcements">
+     <div class="section-header">
+      <i class="fas fa-bullhorn">
+      </i>
+      ANNOUNCEMENTS
+     </div>
+     <div class="section-content">
+      <ul>
+       <li>
+        <i class="fas fa-check-circle"></i>
+        HIVE -SBI Credit Cards - Services/Facilities Offered
+       </li>
+       <li><i class="fas fa-check-circle"></i>
+        Amrit Vrishti Deposit Scheme
+       </li>
+       <li><i class="fas fa-check-circle"></i>
+        Claim Request for Deceased Settlement for Deposit Accounts
+       </li>
+       <li><i class="fas fa-check-circle"></i>
+        Amrit Kalash Deposit
+       </li>
+       <li><i class="fas fa-check-circle"> </i>
+        "SBI WECARE" Deposit Scheme for Senior Citizens
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        SBI Green Rupee Term Deposit (SGRTD)
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        10th SBI Banking and Economics Conclave 2023 (Click Here)
+       </li>
+      </ul>
+      <a href="#">
+       Show All
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="other-services">
+    OTHER SERVICES
+   </div>
+   <div class="footer">
+    <a href="#">
+     <i class="fab fa-pinterest">
+     </i>
+    </a>
+    <a href="#">
+     <i class="fab fa-linkedin">
+     </i>
+    </a>
+    <a href="#">
+     <i class="fab fa-facebook">
+     </i>
+    </a>
+    <a href="#">
+     <i class="fab fa-youtube">
+     </i>
+    </a>
+    <a href="#">
+     <i class="fab fa-instagram">
+     </i>
+    </a>
+    <a href="#">
+     <i class="fab fa-x-twitter">
+     </i>
+    </a>
+    <a href="#">
+     <i class="fas fa-envelope">
+     </i>
+    </a>
+    <a href="#">
+     <i class="fas fa-phone">
+     </i>
+    </a>
+    <a href="#">
+     <i class="fas fa-map-marker-alt">
+     </i>
+    </a>
+    <a href="#">
+     <i class="fas fa-question-circle">
+     </i>
+    </a>
+   </div>
+
+
+
+   <!-- top section -->
+
+   <div class="top-section">
+    <div>
+     <img alt="SBI Wealth logo" height="40px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNd8LgkLht4HSuVCBzY2B3sN-RQk88pXOjvA&s" />
+     <p>
+      SBI WEALTH
+     </p>
+    </div>
+    <div>
+     <img alt="SBI Incube icon" height="50" src="https://cdn-icons-png.freepik.com/256/900/900967.png?semt=ais_hybrid" width="100"/>
+     <p>
+      SBI TECH
+     </p>
+    </div>
+    <div>
+     <img alt="Authorized 3rd Party Login icon" height="50" src="https://cdn-icons-png.freepik.com/512/1067/1067256.png" width="100"/>
+     <p>
+      SBI STARTUP
+     </p>
+    </div>
+    <div>
+     <img alt="Cash Management Product icon" height="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP0td5yWnGgcaHlXfvKnksZPnmPHlAYhQ3R3HhWH-cNd6NAMwp_S2DatG9VdrLUafSKEo&usqp=CAU" width="100"/>
+     <p>
+      CASH MANAGEMENT PRODUCT
+     </p>
+    </div>
+    <div>
+     <img alt="SBI Home Loan icon" height="50" src="https://cdn-icons-png.flaticon.com/512/2676/2676776.png" width="100"/>
+     <p>
+      SBI HOME LOAN
+     </p>
+    </div>
+    <div>
+     <img alt="Report Unauthorized Complaint icon" height="50" src="https://i.pinimg.com/564x/c4/f7/8d/c4f78dc885b5538287d3d054d6cc835e.jpg" width="100"/>
+     <p>
+      DEBIT CARD
+     </p>
+    </div>
+   </div>
+   <footer>
+
+    
+    <div class="footer">
+        <div class="container" style="display: flex; align-items: flex-start;">
+            <div style="flex: 1;">
+                <img src="https://newspaperads.ads2publish.com/wp-content/uploads/2023/07/yono-sbi-ab-sara-india-bolega-yono-it-ad-times-of-india-mumbai-10-07-2023.jpg" alt="SBI Logo" style="max-width: 300px; height: 500px; margin-right:5px;">
+            </div>
+            <div style="flex: 2;margin-top: 90px; ">
+                <h3>Home</h3>
+                <ul>
+                    <li><a href="#">Forex Card Rates</a></li>
+                    <li><a href="#">Interest Rates</a></li>
+                    <li><a href="#">Download Forms</a></li>
+                    <li><a href="#"> SocialResponsibility</a></li>
+                    <li><a href="#">BusinessResponsibility </a></li>
+                    <li><a href="#">Bank Calendar</a></li>
+                    <li><a href="#">RTI 2005</a></li>
+                    <li><a href="#">Grahak Setu</a></li>
+                    <li><a href="#"> Policy for PWD</a></li>
+                </ul>
+            </div>
+            <div style="flex: 2;margin-top: 90px;">
+                <h3>NRI</h3>
+                <ul>
+                    <li><a href="#">Accounts</a></li>
+                    <li><a href="#">Investments</a></li>
+                    <li><a href="#">Loans</a></li>
+                    <li><a href="#">Remittances</a></li>
+                    <li><a href="#">Information</a></li>
+                    <li><a href="#">Privacy Notice </a></li>
+                </ul>
+            </div>
+            <div style="flex: 2;margin-top: 90px;">
+                <h3>Personal</h3>
+                <ul>
+                    <li><a href="#">Savings Account</a></li>
+                    <li><a href="#">Loans</a></li>
+                    <li><a href="#">Investments</a></li>
+                    <li><a href="#">Cards</a></li>
+                    <li><a href="#">Digital</a></li>
+                    <li><a href="#">Information&Services</a></li>
+                    <li><a href="#">Service Charges</a></li>
+                </ul>
+            </div>
+            <div style="flex: 2;margin-top: 90px;">
+                <h3>International Banking</h3>
+                <ul>
+                    <li><a href="#">Banking</a></li>
+                    <li><a href="#">Credit Finance</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </div>
+            <div style="flex: 2;margin-top: 90px;">
+                <h3>Business</h3>
+                <ul>
+                    <li><a href="#">CAG & MCG</a></li>
+                    <li><a href="#">CurrentAccount</a></li>
+                    <li><a href="#">SME-Deposits</a></li>
+                    <li><a href="#">SME-Loans</a></li>
+                    <li><a href="#">Information</a></li>
+                </ul>
+            </div>
+            <div style="flex: 2;margin-top: 90px;">
+                <h3>Wealth Management</h3>
+                <ul>
+                    <li><a href="#">SBI Wealth</a></li>
+                    <li><a href="#">Products</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="important">
+            IMPORTANT: State Bank of India never asks for your user id / password / pin no. through phone call / SMSes / e-mails. Any such phone call / SMSes / e-mails asking you to reveal credentials or One Time Password through SMS could be an attempt to withdraw money from your account. NEVER share these details with anyone. State Bank of India wants you to be secure. If you come across any such instances, please inform us through e-mail to the following address- <a href="mailto:epg.cms@sbi.co.in">epg.cms@sbi.co.in</a>
+        </div>
+        
+        <div class="copyright">
+            © Copyright State Bank of India (APM Id : Webs_Info_875)
+        </div>
+        
+        <div class="social-icons" style="display: flex; gap: 10px;text-align: center;">
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-xing"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fas fa-search"></i></a>
+        </div>
+        
+    </div>
+  </footer>
+ </body>
+</html>

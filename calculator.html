@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        body {
+            background-image: url(https://pbs.twimg.com/ext_tw_video_thumb/1482928449933443072/pu/img/TEj7tRsP-9YzrdJV.jpg:large);
+            font-family: "Roboto Slab", serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            
+        }
+
+        .container {
+            display: flex;
+            margin-top:180px;
+            width: 900px;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .calculator, .banking-features {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 50%;
+        }
+
+        .calculator {
+            text-align: center;
+        }
+
+        #display {
+            width: 100%;
+            height: 50px;
+            background-color: #f8f9fa;
+            color: #000000;
+            text-align: right;
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 2px solid #007bff;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button.operator {
+            background-color: #28a745;
+        }
+
+        button.equals {
+            background-color: #ffc107;
+        }
+
+        button.clear {
+            background-color: #ff0019;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .logo h1 {
+            color: #007bff;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        /* Banking Features Section */
+        .extra-section {
+            margin-top: 10px;
+            text-align: left;
+            width: 90%;
+        }
+
+        .extra-section h3 {
+            color: #007bff;
+            
+        }
+
+        .extra-section label {
+            font-size: 16px;
+            margin-top: 40px;
+        }
+
+        .extra-section input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #emi-result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .top-right-button {
+        position: absolute;
+        top:40px;
+        right: 40px;
+        margin: 40px;
+      }
+     
+      
+      .top-right-button {
+        position: absolute;
+        top:40px;
+        right: 40px;
+        margin: 40px;
+        margin-top: -20px;
+      }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary" style="position: fixed; top: 0; left: 0; width: 100%; background-color: rgb(17, 0, 255); padding: 10px; display: flex; justify-content: space-between; align-items: center;">
+        <a class="navbar-brand" href="#" style="margin-left: 30px;">
+            <img style="padding-top: 10px;margin-bottom: -5px;" src="https://upload.wikimedia.org/wikipedia/commons/c/cc/SBI-logo.svg" alt="Logo" width="40" height="40" class="d-inline-block align-text-center">
+            <b style="font-size: 40px; color: white;">SBI</b>
+        </a>
+        <div class="top-right-button" style="margin-right: 30px;">
+            <a href="./index.html"><button style="background-color: rgba(10, 181, 215, 0.827); color: rgb(255, 255, 255); width: 100px; height: 40px; border-radius: 10px;font-family: Georgia, 'Times New Roman', Times, serif";>HOME</button></a>
+        </div>
+    </nav>
+    <div class="container">
+       
+        <!-- Left section: Calculator -->
+        <div class="calculator">
+            <div class="logo">
+                <h1> <b>SBI CALCULATOR</b></h1>
+            </div>
+            <input type="text" id="display" placeholder="0" disabled/>
+            <div class="buttons">
+                <button onclick="clearDisplay()" class="clear"><b>AC</b></button>
+                <button onclick="appendNumber('/')" class="operator"><b>/</b></button>
+                <button onclick="appendNumber('*')" class="operator"><b>÷</b> </button>
+                <button onclick="appendNumber('-')" class="operator"><b>-</b></button>
+
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button onclick="appendNumber('+')" class="operator">+</button>
+
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button onclick="calculate()" class="equals"><b>=</b></button>
+
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button onclick="appendNumber('0')">0</button>
+                <button onclick="removeNumber()" class="operator"><i class="fa-solid fa-delete-left"></i></button>
+            </div>
+        </div>
+
+        <!-- Right section: SBI Banking Features -->
+        <div class="banking-features">
+            <div class="extra-section">
+                <h3>SBI BANKING FEATURES</h3>
+                <label for="principal">Loan Principal Amount (₹):</label>
+                <input type="number" id="principal" placeholder="Enter principal amount" />
+                
+                <label for="rate">Interest Rate (%) :</label>
+                <input type="number" id="rate" placeholder="Enter annual interest rate" />
+
+                <label for="years">Loan Tenure (Years):</label>
+                <input type="number" id="years" placeholder="Enter loan tenure in years" />
+
+                <button onclick="calculateEMI()" class="operator" style="margin-top: 10px;background-color: #007bff;margin-left: 120px;margin-top: 30px;">Calculate EMI</button>
+
+                <div id="emi-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function appendNumber(value) {
+            let display = document.getElementById("display");
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            let display = document.getElementById("display");
+            display.value = "";
+        }
+
+        function calculate() {
+            let display = document.getElementById("display");
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = "Error";
+            }
+        }
+
+        function removeNumber() {
+            let display = document.getElementById("display");
+            display.value = display.value.slice(0, -1);
+        }
+
+        // EMI Calculation Function
+        function calculateEMI() {
+            let principal = document.getElementById('principal').value;
+            let rate = document.getElementById('rate').value;
+            let years = document.getElementById('years').value;
+
+            if (principal && rate && years) {
+                let monthlyRate = rate / 12 / 100;
+                let n = years * 12;
+                let emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+                document.getElementById('emi-result').innerHTML = "Estimated EMI: ₹" + emi.toFixed(2);
+            } else {
+                document.getElementById('emi-result').innerHTML = "Please fill all the fields.";
+            }
+        }
+    </script>
+
+</body>
+</html>
