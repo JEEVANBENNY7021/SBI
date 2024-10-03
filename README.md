@@ -7,8 +7,8 @@ Additionally, I've integrated a hashtag#Samplecalculator and an hashtag#EMIcalcu
 right at their fingertips. 
 
 GitHub Rep: https://lnkd.in/gyUwQShY
-GitHub Livelink : https://lnkd.in/gHmsHRa2
-Netlify Livelink : https://lnkd.in/gKNDNSfj
+GitHub Livelink : [https://lnkd.in/gHmsHRa2](https://jeevanbenny7021.github.io/SBI/)
+Netlify Livelink : [https://lnkd.in/gKNDNSfj](https://jeevanbenny7021.github.io/SBI/)
 
 hashtag#WebDevelopment hashtag#SBIOnlineBanking hashtag#HTML
 hashtag#CSS hashtag#JavaScript hashtag#TailwindCSS hashtag#Flowbite
